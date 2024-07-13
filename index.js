@@ -10,7 +10,10 @@ app.post('/webhook', (req, res) => {
     console.log('Received webhook data:', data);
     // Xử lý dữ liệu ở đây
 
-    res.status(200).send('Webhook received');
+    res.status(200).json({
+        message: 'Webhook received',
+        receivedData: data
+    });
 });
 
 app.listen(port, () => {
